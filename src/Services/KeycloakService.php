@@ -173,7 +173,7 @@ class KeycloakService
 
         $params = [
             'client_id' => $this->getClientId(),
-            'redirect_uri' => $this->redirectLogout,
+            // 'redirect_uri' => $this->redirectLogout, Disabled caused error on Keycloak
         ];
 
         return $this->buildUrl($url, $params);
