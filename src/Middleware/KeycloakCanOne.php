@@ -7,7 +7,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Auth;
 use Vizir\KeycloakWebGuard\Exceptions\KeycloakCanException;
 
-class KeycloakCan extends KeycloakAuthenticated
+class KeycloakCanOne extends KeycloakAuthenticated
 {
     /**
      * Handle an incoming request.
@@ -24,8 +24,10 @@ class KeycloakCan extends KeycloakAuthenticated
         }
 
         $guards = explode('|', ($guards[0] ?? ''));
-        if (Auth::hasRole($guards)) {
-            return $next($request);
+        foreach ($guards as $guard) {
+            if (Auth::hasRole($guard)) {
+                return $next($request);
+            }
         }
 
         throw new AuthorizationException('Forbidden', 403);

@@ -3,7 +3,7 @@
     <img src="https://img.shields.io/packagist/dt/vizir/laravel-keycloak-web-guard.svg" />
 </p>
 
-# Keycloak Web Guard for Laravel
+# [NEEDS A MAINTAINER] Keycloak Web Guard for Laravel
 
 This packages allow you authenticate users with [Keycloak Server](https://www.keycloak.org).
 
@@ -19,7 +19,7 @@ It works on front. For APIs we recommend [laravel-keycloak-guard](https://github
 This package was tested with:
 
 * Laravel: 5.8 / 7 / 8 / 9
-* Keycloak: 4.8.3.Final / 11.0.2
+* Keycloak: 18.0.0
 
 Any other version is not guaranteed to work.
 
@@ -285,7 +285,7 @@ If your client is not public, you should provide a `KEYCLOAK_CLIENT_SECRET` on y
 
 In some use cases you may need to override the default Guzzle options - likely either to disable SSL verification or to set a Proxy to route all requests through.
 
-Every [http://docs.guzzlephp.org/en/stable/request-options.html](Guzzle Request Option) is supported and is passed directly to the Guzzle Client instance.
+Every [Guzzle Request Option](http://docs.guzzlephp.org/en/stable/request-options.html) is supported and is passed directly to the Guzzle Client instance.
 
 Just add the options you would like to `guzzle_options` array on `keycloak-web.php` config file. For example:
 
